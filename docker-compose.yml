@@ -1,0 +1,27 @@
+services:
+  backend:
+    build:
+      context: ./apps/backend # ruta relativa desde docker-compose.yml
+      dockerfile: Dockerfile # nombre exacto del archivo Dockerfile
+    container_name: backend
+    ports:
+      - "3000:3000"
+
+  frontend:
+    build:
+      context: ./apps/frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "8080:80"
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - backend
+      - frontend

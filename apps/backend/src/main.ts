@@ -2,7 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ValidationPipe } from '@nestjs/common/pipes/validation.pipe';
-import { RequestContextInterceptor } from './common/interceptor/request-context.interceptor';
+import { RequestContextInterceptor } from './common/interceptors/request-context.interceptor';
 import helmet from 'helmet';
 import * as bodyParser from 'body-parser';
 // import cookieParser from 'cookie-parser';

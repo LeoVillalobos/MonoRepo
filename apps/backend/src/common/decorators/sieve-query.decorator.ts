@@ -3,7 +3,7 @@ import { createParamDecorator, ExecutionContext, BadRequestException } from '@ne
 import { Request } from 'express';
 import { plainToInstance } from 'class-transformer';
 import { validateSync } from 'class-validator';
-import { PrismaOrbisModel } from 'src/database/models/prisma-orbis.model';
+import { PrismaOrbisModel } from 'src/infrastructure/database/models/prisma-orbis.model';
 
 export const PrismaOrbisQuery = createParamDecorator(
   (_data: unknown, ctx: ExecutionContext) => {
